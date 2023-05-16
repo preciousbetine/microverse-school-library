@@ -1,11 +1,18 @@
 require './nameable'
+require './person'
 
 class Decorator < Nameable
-  def initialize(nameable_object)
-    @nameable_object = nameable_object
+  def initialize(nameable)
+    @nameable = nameable
   end
 
   def correct_name
-    @nameable_object.correct_name
+    @nameable.correct_name
+  end
+end
+
+class CapitalizeDecorator < Decorator
+  def correct_name
+    @nameable.correct_name.capitalize
   end
 end
