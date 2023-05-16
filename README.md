@@ -68,11 +68,11 @@ No Installation required!
 
 ### Usage
 
-- Usage instructions coming soon!
+Usage instructions coming soon!
 
 ### Run tests
 
-- No tests yet!
+No tests yet!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
