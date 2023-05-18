@@ -1,13 +1,16 @@
+require 'date'
 require_relative 'classes/book'
 require_relative 'classes/student'
 require_relative 'classes/teacher'
 require_relative 'classes/classroom'
+require_relative 'classes/rental'
 
 class App
   def initialize
     @books = []
     @students = []
     @teachers = []
+    @rentals = []
   end
 
   def show_menu
@@ -144,7 +147,48 @@ class App
   end
 
   def create_rental
+    puts 'Create a new rental'
+    if @books.length == 0
+      puts 'No books available for rent!'
+      puts 'Press any key to continue...'
+      return
+    end
 
+    if @students.length == 0 && @teachers.length == 0
+      puts 'No person available to rent!'
+      puts 'Press any key to continue...'
+      return
+    end
+
+    book_index = 0
+    person_index = 0
+    all_people = @teachers + @students
+
+    loop do
+      puts 'Select a book from the following list by number'
+      @books.each_with_index do |book, index|
+        puts "#{index}) Title: #{book.title}, Author: #{book.author}"
+      end
+      print 'Your input: '
+      book_index = gets.strip.to_i
+      break unless book_index - 1 > @books.length
+    end
+
+    loop do
+      puts 'Select a person from the following list by number'
+      all_people.each_with_index do |person, index|
+        puts "#{index}) [#{person.class}] Name: #{person.name}, Age: #{person.age}"
+      end
+      print 'Your input: '
+      person_index = gets.strip.to_i
+      break unless person_index - 1 > all_people.length
+    end
+
+    puts "Today's date is #{Date.today}"
+    rental = Rental.new(Date.today, @books[book_index], all_people[person_index])
+    @rentals << rental
+    puts 'Rental created successfully!'
+    puts 'Press any key to continue...'
   end
 
   def list_person_rentals(person_id)
@@ -165,6 +209,7 @@ class App
       when 4
         create_book
       when 5
+        create_rental
       when 6
       when 7
         puts 'Goodbye!'
