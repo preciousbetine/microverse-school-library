@@ -37,7 +37,12 @@ A School library
 
 ### Key Features <a name="key-features"></a>
 
-- Classes for persons, students, and teachers.
+- List all books
+- List all people (students and teachers)
+- Create people (students and teachers)
+- Create books
+- Rent a book
+- List all rentals
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -59,7 +64,7 @@ Clone this repository to your desired folder:
 
 ```sh
 cd my-folder
-git clone https://github.com/preciousbetine/microverse-oop-school-library.git
+git clone https://github.com/preciousbetine/microverse-school-library.git
 ```
 
 ### Install
@@ -68,7 +73,12 @@ No Installation required!
 
 ### Usage
 
-Usage instructions coming soon!
+To use this app, run the following command:
+```
+ruby main.rb
+```
+
+This begins an interactive session and you can follow the prompts to continue.
 
 ### Run tests
 
@@ -93,7 +103,7 @@ No tests yet!
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-More features coming soon!
+None for now.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
