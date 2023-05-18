@@ -6,7 +6,19 @@ class App
   end
 
   def list_all_books
-    puts 'All available books:'
+    if @books.length == 0
+      puts 'No book available!'
+      puts 'Press any key to continue'
+      puts
+      return
+    end
+
+    puts "All books (#{@books.length})"
+    @books.each do |book|
+      puts "Title: #{book.title}, Author: #{book.author}"
+    end
+    puts 'Press any key to continue'
+    puts
   end
 
   def list_all_people
@@ -33,6 +45,7 @@ class App
     book = Book.new(title, author)
     @books << book
     puts 'New book added!'
+    puts 'Press any key to continue'
     puts
   end
 

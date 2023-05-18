@@ -19,10 +19,13 @@ def main
     input = gets.chomp
     case input.to_i
     when 1
+      app.list_all_books()
+      gets
     when 2
     when 3
     when 4
       app.create_book()
+      gets
     when 5
     when 6
     when 7
