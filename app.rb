@@ -39,7 +39,20 @@ class App
   end
 
   def list_all_people
-
+    if @students.length != 0
+      puts 'All students: '
+      @students.each_with_index do |student, index|
+        puts "#{index+1}. Name: #{student.name}, Age: #{student.age}, Classroom: #{student.classroom.label}"
+      end
+    end
+    if @teachers.length != 0
+      puts 'All teachers: '
+      @teachers.each_with_index do |teacher, index|
+        puts "#{index+1}. Name: #{teacher.name}, Age: #{teacher.age}, Specialization: #{teacher.specialization}"
+      end
+    end
+    puts 'No persons available!' unless @students.length > 0 || @teachers.length > 0
+    puts 'Press any key to continue...'
   end
 
   def create_person
@@ -146,6 +159,7 @@ class App
       when 1
         list_all_books
       when 2
+        list_all_people
       when 3
         create_person
       when 4
