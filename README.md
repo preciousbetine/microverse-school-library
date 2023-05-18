@@ -20,7 +20,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -134,14 +133,6 @@ If you like this project, give it a ⭐
 <!-- > Give credit to everyone who inspired your codebase. -->
 
 No acknowledgements.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- No FAQ
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
