@@ -11,6 +11,12 @@ class Person < Nameable
     @name = name
     @parent_permission = parent_permission
     @age = age
+    @rentals = []
+  end
+
+  def add_rental(rental)
+    @rentals << rental
+    rental.person = self
   end
 
   def can_use_services?
