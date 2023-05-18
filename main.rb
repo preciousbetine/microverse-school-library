@@ -22,6 +22,7 @@ def main
     when 2
     when 3
     when 4
+      app.create_book()
     when 5
     when 6
     when 7

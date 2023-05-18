@@ -18,7 +18,22 @@ class App
   end
 
   def create_book
-    
+    title = ''
+    author = ''
+    loop do
+      print 'Enter book title: '
+      title = gets.strip
+      break unless title.length == 0
+    end
+    loop do
+      print 'Enter book author: '
+      author = gets.strip
+      break unless author.length == 0
+    end
+    book = Book.new(title, author)
+    @books << book
+    puts 'New book added!'
+    puts
   end
 
   def create_rental
