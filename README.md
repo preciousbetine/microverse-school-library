@@ -27,7 +27,7 @@
 
 # About Project <a name="about-project"></a>
 
-A School library
+A school library application with a basic CLI.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -103,7 +103,8 @@ No tests yet!
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-None for now.
+- Delete books
+- Delete people
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
