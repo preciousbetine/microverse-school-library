@@ -27,8 +27,6 @@ class App
   def list_all_books
     if @books.empty?
       puts 'No book available!'
-      puts 'Press any key to continue'
-      puts
       return
     end
 
@@ -36,87 +34,31 @@ class App
     @books.each do |book|
       puts "Title: #{book.title}, Author: #{book.author}"
     end
-    puts 'Press any key to continue'
-    puts
   end
 
   def list_all_people
-    if @students.length != 0
-      puts 'All students: '
-      @students.each_with_index do |student, index|
-        puts "#{index+1}. Name: #{student.name}, Age: #{student.age}, Classroom: #{student.classroom.label}"
-      end
-    end
-    if @teachers.length != 0
-      puts 'All teachers: '
-      @teachers.each_with_index do |teacher, index|
-        puts "#{index+1}. Name: #{teacher.name}, Age: #{teacher.age}, Specialization: #{teacher.specialization}"
-      end
-    end
     puts 'No persons available!' unless @students.length > 0 || @teachers.length > 0
-    puts 'Press any key to continue...'
+    list_students
+    list_teachers
   end
 
   def create_person
     puts 'Do you want to create a student(1) or a teacher(2)?'
-    name = ''
-    age = ''
 
     loop do
       print 'Your input: '
       input = gets.strip.to_i
       case input
       when 1
-        classroom = ''
-        puts 'Creating student...'
-        loop do
-          print 'Enter student name: '
-          name = gets.strip
-          break unless name.length == 0
-        end
-        loop do
-          print 'Enter student age: '
-          age = gets.strip.to_i
-          break unless age == 0
-        end
-        loop do
-          print 'Enter classroom label: '
-          classroom_label = gets.strip
-          if classroom_label.length
-            classroom = Classroom.new(classroom_label)
-            break
-          else
-            puts 'Enter a valid classroom label!'
-          end
-        end
-        student = Student.new(age, classroom, name)
-        @students << student
-        puts 'Student created successfully! Press any key to continue...'
+        create_student
+        puts 'Student created successfully!'
         break
       when 2
-        specialization = ''
-        puts 'Creating teacher...'
-        loop do
-          print 'Enter teacher\'s name: '
-          name = gets.strip
-          break unless name.length == 0
-        end
-        loop do
-          print 'Enter teacher\'s age: '
-          age = gets.strip.to_i
-          break unless age == 0
-        end
-        loop do
-          print 'Enter teacher\'s specialization: '
-          specialization = gets.strip
-          break unless specialization.length == 0
-        end
-        teacher = Teacher.new(age, specialization, name)
-        @teachers << teacher
-        puts 'Teacher created successfully! Press any key to continue...'
+        create_teacher
+        puts 'Teacher created successfully!'
         break
       when 3
-        puts 'Create person cancelled! Press any key to continue...'
+        puts 'Create person cancelled!'
         break
       else
         puts 'Enter 1 for student, or 2 for teacher, 3 to cancel'
@@ -141,21 +83,17 @@ class App
     book = Book.new(title, author)
     @books << book
     puts 'New book added!'
-    puts 'Press any key to continue'
-    puts
   end
 
   def create_rental
     puts 'Create a new rental'
     if @books.length == 0
       puts 'No books available for rent!'
-      puts 'Press any key to continue...'
       return
     end
 
     if @students.length == 0 && @teachers.length == 0
       puts 'No person available to rent!'
-      puts 'Press any key to continue...'
       return
     end
 
@@ -187,7 +125,6 @@ class App
     rental = Rental.new(Date.today, @books[book_index], all_people[person_index])
     all_people[person_index].add_rental(rental)
     puts 'Rental created successfully!'
-    puts 'Press any key to continue...'
   end
 
   def list_person_rentals
@@ -196,7 +133,6 @@ class App
 
     if all_people.length == 0
       puts 'No persons available!'
-      puts 'Press any key to continue...'
       return
     end
 
@@ -217,7 +153,6 @@ class App
       puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
     end
     puts "#{person.name} has no rentals." unless person.rentals.length > 0
-    puts 'Press any key to continue...'
   end
 
   def run
@@ -242,9 +177,82 @@ class App
         break
       else
         puts
-        puts 'Please enter a valid option! Press any key to continue...'
+        puts 'Please enter a valid option!'
       end
+      puts 'Press any key to continue...'
       gets
     end
+  end
+
+  private
+  def list_students
+    if @students.length != 0
+      puts 'All students: '
+      @students.each_with_index do |student, index|
+        puts "#{index+1}. Name: #{student.name}, Age: #{student.age}, Classroom: #{student.classroom.label}"
+      end
+    end
+  end
+
+  def list_teachers
+    if @teachers.length != 0
+      puts 'All teachers: '
+      @teachers.each_with_index do |teacher, index|
+        puts "#{index+1}. Name: #{teacher.name}, Age: #{teacher.age}, Specialization: #{teacher.specialization}"
+      end
+    end
+  end
+
+  def create_student
+    name = ''
+    age = ''
+    classroom = ''
+    puts 'Creating student...'
+    loop do
+      print 'Enter student name: '
+      name = gets.strip
+      break unless name.length == 0
+    end
+    loop do
+      print 'Enter student age: '
+      age = gets.strip.to_i
+      break unless age == 0
+    end
+    loop do
+      print 'Enter classroom label: '
+      classroom_label = gets.strip
+      if classroom_label.length
+        classroom = Classroom.new(classroom_label)
+        break
+      else
+        puts 'Enter a valid classroom label!'
+      end
+    end
+    student = Student.new(age, classroom, name)
+    @students << student
+  end
+
+  def create_teacher
+    name = ''
+    age = ''
+    specialization = ''
+    puts 'Creating teacher...'
+    loop do
+      print 'Enter teacher\'s name: '
+      name = gets.strip
+      break unless name.length == 0
+    end
+    loop do
+      print 'Enter teacher\'s age: '
+      age = gets.strip.to_i
+      break unless age == 0
+    end
+    loop do
+      print 'Enter teacher\'s specialization: '
+      specialization = gets.strip
+      break unless specialization.length == 0
+    end
+    teacher = Teacher.new(age, specialization, name)
+    @teachers << teacher
   end
 end
