@@ -12,21 +12,20 @@ def show_menu
   print 'Your input: '
 end
 
-$app = App.new
-def process_input(input)
+def process_input(app, input)
   case input.to_i
   when 1
-    $app.list_all_books
+    app.list_all_books
   when 2
-    $app.list_all_people
+    app.list_all_people
   when 3
-    $app.create_person
+    app.create_person
   when 4
-    $app.create_book
+    app.create_book
   when 5
-    $app.create_rental
+    app.create_rental
   when 6
-    $app.list_person_rentals
+    app.list_person_rentals
   end
 end
 
@@ -36,6 +35,8 @@ def invalid_option
 end
 
 def main
+  app = App.new
+
   loop do
     show_menu
     input = gets.chomp
@@ -43,7 +44,7 @@ def main
       puts 'Goodbye!'
       break
     end
-    process_input(input) if (1..6).to_a.include?(input.to_i)
+    process_input(app, input) if (1..6).to_a.include?(input.to_i)
     invalid_option unless (1..6).to_a.include?(input.to_i)
 
     puts 'Press Enter to continue...'
