@@ -10,7 +10,6 @@ class App
     @books = []
     @students = []
     @teachers = []
-    @rentals = []
   end
 
   def show_menu
@@ -186,13 +185,39 @@ class App
 
     puts "Today's date is #{Date.today}"
     rental = Rental.new(Date.today, @books[book_index], all_people[person_index])
-    @rentals << rental
+    all_people[person_index].add_rental(rental)
     puts 'Rental created successfully!'
     puts 'Press any key to continue...'
   end
 
-  def list_person_rentals(person_id)
+  def list_person_rentals
+    all_people = @teachers + @students
+    person_index = 0
 
+    if all_people.length == 0
+      puts 'No persons available!'
+      puts 'Press any key to continue...'
+      return
+    end
+
+    loop do
+      puts 'Select a person from the following list by number'
+      all_people.each_with_index do |person, index|
+        puts "#{index}) [#{person.class}] Name: #{person.name}, Age: #{person.age}"
+      end
+      print 'Your input: '
+      person_index = gets.strip.to_i
+      break unless person_index - 1 > all_people.length
+      puts "Invalid value entered!"
+    end
+
+    person = all_people[person_index]
+    puts "All #{person.name}'s rentals:" unless person.rentals.length == 0
+    person.rentals.each do |rental|
+      puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+    end
+    puts "#{person.name} has no rentals." unless person.rentals.length > 0
+    puts 'Press any key to continue...'
   end
 
   def run
@@ -211,6 +236,7 @@ class App
       when 5
         create_rental
       when 6
+        list_person_rentals
       when 7
         puts 'Goodbye!'
         break
