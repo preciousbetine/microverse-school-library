@@ -97,6 +97,19 @@ No tests yet!
 - Twitter: [@preciousbetine](https://twitter.com/preciousbetine)
 - LinkedIn: [preciousbetine](https://linkedin.com/in/preciousbetine)
 
+👤 **Walid Kabboussa**
+
+- GitHub: [@Hisoka37](https://github.com/Hisoka37)
+- Twitter: [@KBwalid9](https://twitter.com/KBwalid9)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/walidkb/)
+
+
+👤 **Lengushuru Charles**
+
+- GitHub: [@lengushuru](https://github.com/lengushuru)
+- Twitter: [@lengushuru](https://twitter.com/lengush)
+- LinkedIn: [Lengushuru Charles](https://linkedin.com/in/lengushuru)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
