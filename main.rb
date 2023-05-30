@@ -41,6 +41,7 @@ def main
     show_menu
     input = gets.chomp
     if input.to_i == 7
+      app.save
       puts 'Goodbye!'
       break
     end

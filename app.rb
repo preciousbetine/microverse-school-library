@@ -2,6 +2,7 @@ require 'date'
 require_relative 'modules/book'
 require_relative 'modules/person'
 require_relative 'modules/rental'
+require_relative 'modules/io'
 
 class App
   def initialize
@@ -13,4 +14,5 @@ class App
   include BOOK
   include PERSON
   include RENTAL
+  include SAVEDATA
 end
