@@ -5,14 +5,13 @@ module SAVEDATA
     all_books = []
     @books.each do |book|
       all_books << {
+        id: book.id,
         title: book.title,
         author: book.author
       }
     end
     books_json = JSON.generate(all_books)
-    File.open('./data/books.json', 'w') {
-      |f| f.write books_json
-    }
+    File.write('./data/books.json', books_json)
   end
 
   def save_persons
@@ -32,13 +31,11 @@ module SAVEDATA
         name: teacher.name,
         parent_permission: teacher.parent_permission,
         age: teacher.age,
-        specialization: teacher.specialization,
+        specialization: teacher.specialization
       }
     end
     persons_json = JSON.generate(all_persons)
-    File.open('./data/persons.json', 'w') {
-      |f| f.write persons_json
-    }
+    File.write('./data/persons.json', persons_json)
   end
 
   def save_rentals
@@ -62,9 +59,7 @@ module SAVEDATA
       end
     end
     rentals_json = JSON.generate(all_rentals)
-    File.open('./data/rentals.json', 'w') {
-      |f| f.write rentals_json
-    }
+    File.write('./data/rentals.json', rentals_json)
   end
 
   def save
