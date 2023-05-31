@@ -21,5 +21,10 @@ describe 'Student' do
             student.classroom = classroom2
             expect(students).to include(student)
         end
+        it 'Should play hooky' do
+            classroom1 = double('classroom')
+            student = Student.new(16, classroom1)
+            expect(student.play_hooky).to eq('¯\(ツ)/¯')
+        end
     end
 end
