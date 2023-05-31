@@ -1,5 +1,5 @@
-require_relative '../classes/classroom.rb'
-require_relative '../classes/student.rb'
+require_relative '../classes/classroom'
+require_relative '../classes/student'
 
 describe Classroom do
   let(:classroom) { Classroom.new('Physics') }

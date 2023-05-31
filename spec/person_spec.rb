@@ -1,9 +1,9 @@
-require_relative '../classes/person.rb'
+require_relative '../classes/person'
 
 describe 'Persons' do
   context 'persons' do
     it 'should initialize a person' do
-      person = Person.new(20, name='Precious', parent_permission:false)
+      person = Person.new(20, 'Precious', parent_permission: false)
       expect(person.id).to be_kind_of Numeric
       expect(person.name).to eql 'Precious'
       expect(person.parent_permission).to eql false
@@ -12,7 +12,7 @@ describe 'Persons' do
     end
 
     it 'should add rentals' do
-      person = Person.new(20, name='Precious', parent_permission:false)
+      person = Person.new(20, 'Precious', parent_permission: false)
 
       rental1 = double('rental')
       rental2 = double('rental')
@@ -26,19 +26,19 @@ describe 'Persons' do
     end
 
     it 'should not allow a person to use services' do
-      person = Person.new(17, name='Precious', parent_permission:false)
+      person = Person.new(17, 'Precious', parent_permission: false)
 
       expect(person.can_use_services?).to be false
     end
 
     it 'should allow a person to use services' do
-      person = Person.new(18, name='Precious', parent_permission:false)
+      person = Person.new(18, 'Precious', parent_permission: false)
 
       expect(person.can_use_services?).to be true
     end
 
     it 'should correct a person\'s name' do
-      person = Person.new(18, name='Precious', parent_permission:false)
+      person = Person.new(18, 'Precious', parent_permission: false)
 
       expect(person.name).to eql 'Precious'
     end
