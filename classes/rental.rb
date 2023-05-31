@@ -15,6 +15,6 @@ class Rental
 
   def person=(person)
     @person = person
-    person.rental << self unless person.rentals.include?(self)
+    person.rentals << self unless person.rentals.include?(self)
   end
 end
