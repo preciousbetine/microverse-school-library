@@ -36,11 +36,12 @@ end
 
 def main
   app = App.new
-
+  app.load_data
   loop do
     show_menu
     input = gets.chomp
     if input.to_i == 7
+      app.save_data
       puts 'Goodbye!'
       break
     end

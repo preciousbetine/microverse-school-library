@@ -1,8 +1,6 @@
 <a id="readme-top"></a>
 <img src="https://camo.githubusercontent.com/8a4ae3fb98faf74ddf78a6677ceaa6e8872f7f340f569b7c5e1aa9bcc4061d95/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574" alt="logo" width="70"  height="auto" />
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -21,8 +19,6 @@
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
-
-<!-- PROJECT DESCRIPTION -->
 
 # About Project <a name="about-project"></a>
 
@@ -45,11 +41,7 @@ A school library application with a basic CLI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-
 ## 💻 Getting Started <a name="getting-started"></a>
-
-<!-- > Describe how a new developer could make use of your project. -->
 
 ### Prerequisites
 
@@ -77,7 +69,7 @@ To use this app, run the following command:
 ruby main.rb
 ```
 
-This begins an interactive session and you can follow the prompts to continue.
+This begins an interactive session where you follow the prompts to continue.
 
 ### Run tests
 
@@ -85,11 +77,7 @@ No tests yet!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
-
 ## 👥 Authors <a name="authors"></a>
-
-<!-- > Mention all of the collaborators of this project. -->
 
 👤 **Precious Betine**
 
@@ -97,16 +85,24 @@ No tests yet!
 - Twitter: [@preciousbetine](https://twitter.com/preciousbetine)
 - LinkedIn: [preciousbetine](https://linkedin.com/in/preciousbetine)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+👤 **Walid Kabboussa**
 
-<!-- FUTURE FEATURES -->
+- GitHub: [@Hisoka37](https://github.com/Hisoka37)
+- Twitter: [@KBwalid9](https://twitter.com/KBwalid9)
+- LinkedIn: [Walid Kabboussa](https://www.linkedin.com/in/walidkb/)
+
+👤 **Lengushuru Charles**
+
+- GitHub: [@lengushuru](https://github.com/lengushuru)
+- Twitter: [@lengushuru](https://twitter.com/lengush)
+- LinkedIn: [Lengushuru Charles](https://linkedin.com/in/lengushuru)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-- Delete books
-- Delete people
+None for now.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -116,21 +112,15 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-<!-- > Write a message to encourage readers to support your project -->
 
 If you like this project, give it a ⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
-
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-<!-- > Give credit to everyone who inspired your codebase. -->
 
 No acknowledgements.
 
