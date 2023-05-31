@@ -4,6 +4,7 @@ describe 'Persons' do
   context 'persons' do
     it 'should initialize a person' do
       person = Person.new(20, 'Precious', parent_permission: false)
+
       expect(person.id).to be_kind_of Numeric
       expect(person.name).to eql 'Precious'
       expect(person.parent_permission).to eql false
@@ -13,9 +14,9 @@ describe 'Persons' do
 
     it 'should add rentals' do
       person = Person.new(20, 'Precious', parent_permission: false)
-
       rental1 = double('rental')
       rental2 = double('rental')
+
       allow(rental1).to receive(:person=)
       allow(rental2).to receive(:person=)
 
@@ -40,7 +41,7 @@ describe 'Persons' do
     it 'should correct a person\'s name' do
       person = Person.new(18, 'Precious', parent_permission: false)
 
-      expect(person.name).to eql 'Precious'
+      expect(person.correct_name).to eql 'Precious'
     end
   end
 end
