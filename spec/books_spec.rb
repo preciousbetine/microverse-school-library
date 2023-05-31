@@ -1,4 +1,4 @@
-require './classes/book.rb'
+require_relative '../classes/book.rb'
 
 describe 'Books' do
   context 'books' do
