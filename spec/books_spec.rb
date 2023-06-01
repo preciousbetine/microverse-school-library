@@ -1,27 +1,28 @@
 require_relative '../classes/book'
 
-describe 'Books' do
-  context 'books' do
+describe Book do
+  subject { Book.new('Title', 'Author') }
+
+  context '#initialize' do
     it 'should initialize a book' do
-      book = Book.new('Title', 'Author')
-      expect(book.id).to be_kind_of Numeric
-      expect(book.rentals).to eql []
-      expect(book.title).to eql 'Title'
-      expect(book.author).to eql 'Author'
+      expect(subject.id).to be_kind_of Numeric
+      expect(subject.rentals).to be_empty
+      expect(subject.title).to eql 'Title'
+      expect(subject.author).to eql 'Author'
     end
+  end
 
-    it 'should add rentals' do
-      book = Book.new('Title', 'Author')
-
+  context '#add_rental' do
+    it 'should add a rental' do
       rental1 = double('rental')
       rental2 = double('rental')
       allow(rental1).to receive(:book=)
       allow(rental2).to receive(:book=)
 
-      book.add_rental(rental1)
-      book.add_rental(rental2)
+      subject.add_rental(rental1)
+      subject.add_rental(rental2)
 
-      expect(book.rentals.length).to eql 2
+      expect(subject.rentals.length).to eql 2
     end
   end
 end

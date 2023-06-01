@@ -1,18 +1,22 @@
 require_relative '../classes/teacher'
 
-describe 'Teacher' do
-  context 'teacher' do
-    it 'should intitalize a teacher' do
-      teacher = Teacher.new(30, 'Physics')
-      expect(teacher.name).to eq 'Unknown'
-      expect(teacher.age).to eq 30
-      expect(teacher.specialization).to eql 'Physics'
-      expect(teacher.parent_permission).to be true
-    end
+describe Teacher do
+  subject do
+    Teacher.new(30, 'Physics')
+  end
 
+  context '#initialize' do
+    it 'should intitalize a teacher' do
+      expect(subject.name).to eq 'Unknown'
+      expect(subject.age).to eq 30
+      expect(subject.specialization).to eql 'Physics'
+      expect(subject.parent_permission).to be true
+    end
+  end
+
+  context '#can_use_services?' do
     it 'should allow a teacher to use services' do
-      teacher = Teacher.new(30, 'Physics', 'Unknown')
-      expect(teacher.can_use_services?).to be true
+      expect(subject.can_use_services?).to be true
     end
   end
 end
